@@ -1,0 +1,725 @@
+<!doctype html>
+<html <?php language_attributes(); ?> class="no-js">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128074648-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('set', {
+      'user_id': 'USER_ID'
+    }); // Задание идентификатора пользователя с помощью параметра user_id (текущий пользователь).
+    gtag('config', 'UA-128074648-1');
+  </script>
+
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <title><?php wp_title(''); ?><?php if (wp_title('', false)) {
+										echo ' :';
+									} ?> <?php bloginfo('name'); ?></title>
+
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
+  <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,800&amp;subset=cyrillic" rel="stylesheet">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<?php bloginfo('description'); ?>">
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function () {
+        try {
+          w.yaCounter49279669 = new Ya.Metrika2({
+            id: 49279669,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true
+          });
+        } catch (e) {}
+      });
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () {
+          n.parentNode.insertBefore(s, n);
+        };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://mc.yandex.ru/metrika/tag.js";
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else {
+        f();
+      }
+    })(document, window, "yandex_metrika_callbacks2");
+  </script> <noscript>
+    <div><img src="https://mc.yandex.ru/watch/49279669" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  <!-- /VK pixel -->
+  <script type="text/javascript">
+    ! function () {
+      var t = document.createElement("script");
+      t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?158", t.onload = function () {
+        VK.Retargeting.Init("VK-RTRG-268038-5CEj0"), VK.Retargeting.Hit()
+      }, document.head.appendChild(t)
+    }();
+  </script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-268038-5CEj0" style="position:fixed; left:-999px;"
+      alt="" /></noscript>
+  <!-- /VK pixel -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121879735-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121879735-1');
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+  <style>
+    .hidden {
+      display: none !important;
+    }
+  </style>
+
+
+  <!-- HIde secret combo -->
+  <script>
+    function hide_secret_combos() {
+      const leftPrices = jQuery(
+        '#lsp-block-items-popup > div.modal.modal-item span.jstore-tag.lsp-modifer-desc > span.jstore-tag.lsp-modifier-price-c'
+        );
+      const rightPrices = jQuery(
+        '#lsp-block-items-popup > div.modal.modal-item span.jstore-tag.lsp-modifer-desc > span.jstore-tag.lsp-modifier-summ-c'
+        );
+      [...leftPrices]
+      .forEach(t => t.classList.add('hidden'));
+      [...rightPrices]
+      .forEach(t => t.classList.add('hidden'));
+      const query = '.jstore-tag.h1:contains(Комбос)';
+
+      if ($(query).length == 0) {
+        return setTimeout(hide_secret_combos, 10);
+      }
+      if (location.search !== "?q=21d0b60fcbb98203") {
+        $(query).next().remove();
+        $(query).remove();
+      }
+      console.log("change");
+    }
+
+    $(document).ready(function () {
+      hide_secret_combos();
+    });
+  </script>
+
+  <script type="text/javascript">
+    window.onhashchange = () => hide_secret_combos();
+    $(window).bind('hashchange', function () {
+      var myhash = window.location.hash;
+      if (myhash == '#!/personal') {
+        $('#banner').addClass('lk-banner');
+
+      }
+    });
+
+
+    $(document).ready(function () {
+
+      var url = window.location.href;
+
+      if (url == 'https://tochnopizza.ru/#!/personal') {
+        $('#banner').addClass('lk-banner');
+
+      }
+
+
+
+    });
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '857403007988438');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=857403007988438&ev=PageView&noscript=1" /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+
+
+  <!-- toggle для корзины -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.slidingDiv').hide();
+      $('.show_hide').show();
+      $('.show_hide').click(function () {
+        $('.slidingDiv').slideToggle();
+      });
+    });
+
+
+
+    // закрыть корзину если она пустая
+    $(function () {
+      $("body").on('DOMSubtreeModified', ".jstore-js-cart-total-value", function () {
+
+        var cartvalue = $(".jstore-js-cart-total-value").text();
+        if (cartvalue <= 0) {
+          $('.cart-more').hide();
+          $('.mobile-list').hide();
+        }
+      });
+    });
+    // закрыть корзину если она пустая
+  </script>
+
+  <!-- FIX для корзины -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $('.cart-more').hide();
+      $('.mobile-list').hide();
+
+      $('body').on('click', 'main[role="main"], .jstore-js-addToCart', function () {
+        $('.cart-more').hide();
+        $('.mobile-list').hide();
+      });
+
+      $('body').on('click', '.order-list-del__el', function () {
+        $('.cart-more').hide();
+        $('.mobile-list').hide();
+      });
+
+
+      $('body').on('click', '.lsp-block-item-add-to-cart', function () {
+        $(this).addClass('highlighted');
+        $(this).text('Добавлено');
+        setTimeout(function () {
+          $('.lsp-block-item-add-to-cart').text('В корзину');
+          $('.lsp-block-item-add-to-cart').removeClass('highlighted');
+        }, 2000);
+      });
+
+
+    });
+  </script>
+
+  <script type="text/javascript">
+    window.jStoreEvents = window.jStoreEvents ? window.jStoreEvents : [];
+    jStoreEvents.push(['ready', null, function (data) {
+
+      var myhash = window.location.hash;
+      if (myhash != '') {
+
+        str = myhash.substring(1);
+        var check_load = str.indexOf("!") + 1;
+
+        // Меню при загрузке
+        if (check_load == 0) {
+          setTimeout(function () {
+            $('html, body').animate({
+              scrollTop: $('.' + str + ':first').offset().top - 100
+            }, 1200);
+
+            // 		window.location.hash = window.location.hash + "k";
+
+          }, 200);
+        }
+        // меню
+
+      }
+
+      (function (w, $) {
+        var UrlHashMonitor = {};
+        UrlHashMonitor.oldHash = '';
+        UrlHashMonitor.newHash = '';
+        UrlHashMonitor.oldHref = '';
+        UrlHashMonitor.newHref = '';
+        UrlHashMonitor.onHashChange = function (f) {
+          $(window).on('hashchange', function (e) {
+            UrlHashMonitor.oldHash = UrlHashMonitor.newHash;
+            UrlHashMonitor.newHash = w.location.hash;
+            UrlHashMonitor.oldHref = UrlHashMonitor.newHref;
+            UrlHashMonitor.newHref = w.location.href;
+            f(e);
+          });
+        };
+        UrlHashMonitor.init = function () {
+          UrlHashMonitor.oldHash = UrlHashMonitor.newHash = w.location.hash;
+          UrlHashMonitor.oldHref = UrlHashMonitor.newHref = w.location.href;
+        };
+        w.UrlHashMonitor = UrlHashMonitor;
+        return UrlHashMonitor;
+
+      })(window, window.jQuery);
+
+      /*
+       * Monitor hash
+       */
+      // TODO NORMAL SCROLL
+      UrlHashMonitor.init();
+      UrlHashMonitor.onHashChange(function () {
+
+        var myhash = window.location.hash;
+        str = myhash.substring(1);
+
+        var check = UrlHashMonitor.oldHref.indexOf("!") + 1;
+        var check_new = UrlHashMonitor.newHref.indexOf("!") + 1;
+
+        if (check == 0 && check_new == 0) {
+          $('html, body').animate({
+            scrollTop: $('.' + str + ':visible:first').offset().top - 100
+          }, 1200);
+
+          // 	window.location.hash = window.location.hash + "k";
+
+        }
+
+      });
+
+      // меню
+
+      $('label.jstore-tag:nth-child(9) > span:nth-child(2) > input:nth-child(1)').prop('readonly',
+      true); // запретить ввод данных
+
+      $('.cart-more').hide();
+      $('.mobile-list').hide();
+      $('.order-list--el .img-prod-class[src=""]').attr('src',
+        '//tochnopizza.ru/wp-content/uploads/2018/05/placeholder.jpg');
+      $('.ispizza .img-prod-class[src=""]').attr('src',
+        '//tochnopizza.ru/wp-content/uploads/2018/05/placeholder.jpg');
+      $('.isdrink .img-prod-class[src=""]').attr('src',
+        '//tochnopizza.ru/wp-content/uploads/2018/05/placeholder-drink.jpg');
+
+    }]);
+  </script>
+
+
+  <script type="text/javascript">
+    window.jStoreEvents = window.jStoreEvents ? window.jStoreEvents : [];
+    jStoreEvents.push(['pageChanged', null, function (data) {
+
+      $('label.jstore-tag:nth-child(9) > span:nth-child(2) > input:nth-child(1)').prop('readonly',
+      true); // запретить ввод данных
+      $('.cart-more').hide();
+      $('.mobile-list').hide();
+
+      $('.ispizza .img-prod-class[src=""]').attr('src',
+        '//tochnopizza.ru/wp-content/uploads/2018/05/placeholder.jpg');
+      $('.isdrink .img-prod-class[src=""]').attr('src',
+        '//tochnopizza.ru/wp-content/uploads/2018/05/placeholder-drink.jpg');
+
+
+    }]);
+  </script>
+  <!-- FIX для корзины MOBILE END-->
+
+  <!-- toggle для мобильной корзины -->
+  <script>
+    $(document).ready(function () {
+      $('body').on('click', '.nav-toggle', function () {
+        //get collapse content selector
+        var collapse_content_selector = $(this).attr('href');
+
+        //make the collapse content to be shown or hide
+        var toggle_switch = $(this);
+        $(collapse_content_selector).toggle(function () {
+          if ($(this).css('display') == 'none') {
+            toggle_switch.html('Корзина'); //change the button label to be 'Show'
+          } else {
+            toggle_switch.html('Закрыть'); //change the button label to be 'Hide'
+          }
+        });
+      });
+
+    });
+
+
+    $(document).ready(function () {
+      // кнопка назад
+      $('body').on('click', '.b-modal, .gobackpage', function () {
+        location.href = 'https://tochnopizza.ru/';
+        return false;
+      });
+    });
+  </script>
+
+
+
+  <script type="text/javascript">
+    $(function () {
+      var shrinkHeader = 80;
+      $(window).scroll(function () {
+        var scroll = getCurrentScroll();
+        if (scroll >= shrinkHeader) {
+          $('.shadowbox').addClass('shrink');
+        } else {
+          $('.shadowbox').removeClass('shrink');
+        }
+      });
+
+      function getCurrentScroll() {
+        return window.pageYOffset || document.documentElement.scrollTop;
+      }
+    });
+  </script>
+
+  <?php wp_head(); ?>
+  <script>
+    // conditionizr.com
+    // configure environment tests
+    conditionizr.config({
+      assets: '<?php echo get_template_directory_uri(); ?>',
+      tests: {}
+    });
+  </script>
+
+
+  <!-- IIKO -->
+
+  <!-- <link href="//deliveryWiget.iiko.ru/v2_0/assets/css/style.css" rel="stylesheet" type="text/css" media="screen" /> -->
+  <!-- <script type="text/javascript">
+	window.restaurant = 'f24384bc-5b0c-11e7-80ca-d8d385655247'
+</script> -->
+
+
+
+  <script>
+    window.jStoreConfig = {
+      'restaurant': '459a8fb8-5a9d-11e8-80cd-d8d385655247',
+
+      'loc': {
+        'Your_name': 'Имя',
+        'Contact_phone': 'Номер телефона',
+        'Email': 'E-mail',
+        'Order_comment': 'Комментарий',
+        'Page_make_order': 'ЗАКАЗАТЬ',
+        'Bonus_balances': 'Мои бонусы:',
+        'Your_orders': 'Мои заказы:',
+        'energy_sum': 'Состав',
+        'Nutritional_value': 'Состав',
+        'Total': 'Итого',
+        "Hello": "Привет",
+        "Hello_": "",
+        "Gift_2u": "",
+        "Get": "ЗАБРАТЬ  🎁",
+        "Order_customerName": "Имя",
+        "need_userAgreement_confirm": "Я согласен на обработку и хранение своих персональных данных",
+        "need_userAgreementRegister_confirm": "Я согласен на обработку и хранение своих персональных данных",
+        "order_bonus": "Использовать мои <span class='jstore-tag lsp-js-maxPaymentSum'>%maxPaymentSum%</span> <span class='jstore-tag lsp-js-maxPaymentSumText'>%maxPaymentSumText%</span>"
+      },
+      'templates': [{
+          'type': 'itemsFilter#delivery',
+          'categories': ['2f235918-278c-42e1-882f-179cc7c4438b'],
+          'properties': {
+            'tags': ['khity_prodazh']
+          }
+        },
+        {
+          'type': 'recommendationBlock#top_recommendations',
+          'class': 'recomend',
+          'properties': {
+            'sliderUse': false,
+            'visible': ['order'],
+            'sliderConfig': {
+              autoplay: false,
+              autoplaySpeed: 4000,
+              prevArrow: '<span class="lsp-slider-prev"><<<</span>',
+              nextArrow: '<span class="lsp-slider-next">>>></span>',
+              slidesToShow: 3,
+              slidesToScroll: 3
+            }
+          }
+        },
+
+        {
+          'type': 'recommendationBlock',
+          'properties': {
+            'sliderUse': false
+          }
+        },
+        {
+          'class': 'items-el ispizza',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              '177b7879-98b9-4b7e-8098-a0e64f3e4245', //пиццы
+            ]
+          }
+        },
+        {
+          'class': 'items-el ismix',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              '955a3350-af26-4797-bdcb-55442e86141f', //миксы
+            ]
+          }
+        },
+        {
+          'class': 'half-img items-el isdrink',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              'd39ffa4f-5698-4b4a-82fd-2601bb2cfa08',
+            ]
+          }
+        },
+        {
+          'class': 'half-img items-el iszakuski',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              '99287b42-3d00-4b1d-9cfb-5d036e76b340',
+            ]
+          }
+        },
+        {
+          'class': 'half-img items-el issecretkombo',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              'c1a33985-2fc1-4098-8b29-725173c9bf25',
+            ]
+          }
+        },
+        { //ADD SECRET COMBOS
+          'class': 'half-img items-el iskombo',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              'c3a96035-7354-455a-85b8-c18724637072',
+            ]
+          }
+        },
+        {
+          'class': 'items-el notsale',
+          'type': 'catalogItem',
+          'filter': {
+            'categories': [
+              // категория которую надо скрыть,
+            ]
+          }
+        },
+
+        {
+          'type': 'catalogItem',
+          'class': 'items-el',
+
+        },
+        {
+          'type': 'itemPopUp',
+          'template': '#itemPopUpTemplate',
+          'properties': {
+            'closeAfterToCartSuccess': false //После того, как товар добавлен в корзину, попап не закрываем
+          },
+        },
+
+
+        {
+          'type': 'userRegister',
+          'properties': {
+            'showInPopUp': true
+          }
+        },
+        {
+          'type': 'userRememberPassword',
+          'properties': {
+            'showInPopUp': true
+          }
+        },
+        {
+          'type': 'userPersonalEdit',
+          'properties': {
+            'showInPopUp': true
+          }
+        },
+        {
+          'type': 'userAuth',
+          'properties': {
+            'showInPopUp': true
+          }
+        },
+
+        // вывод по категориям			
+        {
+          'type': 'itemsFilter#drinkk',
+          'template': '#drinkk',
+          'properties': {
+            'categories': ['d39ffa4f-5698-4b4a-82fd-2601bb2cfa08'],
+            'limit': '5',
+          }
+        },
+
+        {
+          'type': 'itemsFilter#text-cart',
+          'template': '#text-cart',
+          'properties': {
+            'categories': ['d39ffa4f-5698-4b4a-82fd-2601bb2cfa08'], // условия доставки
+          }
+        },
+
+
+      ]
+    };
+  </script>
+
+
+  <script id="drinkk" type="text/html">
+    <h2 class="jstore-tag h1">Напитки</h2>
+    <div class="jstore-tag lsp-js-items"></div>
+  </script>
+
+
+  <script id="text-cart" type="text/html">
+    <div class="cart-info">
+
+      <p>Минимальный заказ - 400 &#8381. Максимальный заказ при оплате наличными - 5 000 &#8381. <br> Доставка
+        бесплатно. Условия смотрите в разделе <a href="/delivery/" target="_blank">доставка и оплата.</a></p>
+      <p>ДОСТАВКА ОСУЩЕСТВЛЯЕТСЯ ЕЖЕДНЕВНО С 11:00 до 00:00, каждый день - без выходных.</p>
+    </div>
+  </script>
+
+
+
+
+  <script data-main="//deliverywiget.iiko.ru/v2_0/app/config" src="//deliverywiget.iiko.ru/v2_0/libs/require.js">
+  </script>
+
+  <!-- IKKO -->
+
+
+</head>
+
+<body <?php body_class(); ?>>
+  <!-- wrapper -->
+  <div id="stick" class="shadowbox">
+    <div class="wrapper">
+
+      <!-- header -->
+      <header class="header clear" role="banner">
+
+        <!-- logo -->
+        <div class="logo">
+          <a href="<?php echo home_url(); ?>">
+            <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img"> -->
+          </a>
+        </div>
+        <!-- /logo -->
+
+
+        <div class="top-line">
+          <a href="/delivery/">Доставка пиццы <span class="mycolor">Екатеринбург</span></a>
+          <span class="addinfo">Точно в срок! - 45 минут</span>
+          <a class="hide-ipad" href="tel:+7(343)3004300"><span class="top-phone">+7 343 300 4 300</span></a>
+
+          <!-- <a href="#"><span class="myacc">Личный кабинет</span></a> -->
+
+          <div class="lk">
+            <div id="lsp-block-userinfo" class="lsp-block-userinfo">
+              <div class="jstore-tag lsp-block-userinfo-inner">
+                <div class="jstore-tag lsp-block-userinfo-appeal">
+                  <a href="//tochnopizza.ru/#!/auth" class="jstore-tag lsp-block-userinfo-goto-link">Войти</a>
+                </div>
+              </div>
+            </div>
+            <!--<a href="/menu/#!/personal">Вход</a>-->
+          </div>
+
+
+        </div>
+        <!-- nav -->
+
+        <nav class="nav" role="navigation">
+          <?php html5blank_nav(); ?>
+
+          <div class="show_hide cart-button"><span>Корзина</span></div>
+          <div class=" cart-container lsp-block-cart jstore-tag" data-template="top-cart-header-template"
+            data-page="change_category">
+            <div id="cart-block">
+              <div class="items-list">
+                <span class="prod-count">Товаров 0</span>
+                <br><span class="prod-sum">0 &#8381</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </nav>
+        <!-- /nav -->
+
+      </header>
+      <!-- /header -->
+
+    </div>
+  </div>
+
+
+  <div class="footer-cart">
+
+    <div class="cart-container lsp-block-cart jstore-tag" data-template="top-cartsss-item-template-mobile"
+      data-page="change_category">
+      <div class="items-footer">
+        <span class="prod-count-footer">Товаров -</span>
+        <span class="prod-sum-footer">- &#8381</span>
+      </div>
+      <div class="cart-button-footer nav-toggle"><span class="nav-toggle" href="#collapse1">Корзина</span></div>
+    </div>
+
+  </div>
+
+  <?php
+	// выводим баннер на главной
+	if (is_front_page()) { ?>
+
+  <div id="banner">
+    <? php // layerslider(1) 
+			?>
+    <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/banner.jpg"> -->
+    <?php echo do_shortcode('[rev_slider alias="home-fix"]'); ?>
+  </div>
+
+  <?php
+	} else {
+		// echo "это не главная страница"; 
+	}
+
+	?>
